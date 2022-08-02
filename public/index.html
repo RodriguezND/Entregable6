@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTREGABLE 6</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="cliente.js"></script>
+</head>
+<body>
+    <h1>Nuevo Producto</h1>
+    <form onsubmit="return addProducto(this)">
+        <label for="title">Nombre</label>
+        <input type="text" name="title" id="title"><br>
+
+        <label for="price">Precio</label>
+        <input type="text" name="price" id="price"><br>
+
+        <label for="thumbnail">Url</label>
+        <input type="text" name="thumbnail" id="thumbnail"><br>
+
+        <input type="submit" value="Enviar">        
+        
+    </form>
+
+<br>
+
+<div id="productos"></div>
+
+<br>
+<h1>Chat</h1>
+<form onsubmit="return addMessage(this)">
+    <input type="text" id="username" placeholder="Email" >
+    <input type="text" id="texto" placeholder="Pone algo">
+    <input type="submit" value="Enviar">
+</form>
+
+<div id="messages"></div>
+
+</body>
+</html>
