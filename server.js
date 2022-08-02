@@ -15,11 +15,7 @@ app.use(express.static('./public'))
 
 app.use(express.static("public"))
 
-app.get("/", (req, res) => {
 
-    res.render("plantilla.ejs")
-
-})
 
 
 
@@ -31,7 +27,6 @@ const productos = [
     { title: "Ropa", price: 56, thumbnail: "http:bla"},
     { title: "Shampo", price: 100, thumbnail: "http:bla"}
  ];
-
 
 
 
@@ -80,15 +75,29 @@ io.on('connection', function(socket) {
 
     // ASYNC PRODUCTOS ------------------------------------------------------
 
+    
 
-
-    socket.emit('productos', productos);
+    /* socket.emit('productos', productos);
     
     //Agregar Nuevo producto
     socket.on('new-productos',data => {
         productos.push(data);
         io.sockets.emit('productos', productos);
-    });
+    }); */
    
+    app.get("/prueba", (req, res) => {
 
+        
+        res.render("index.ejs", {productos: productos})
+    
+    })
+
+    socket.on('new-productos',data => {
+        productos.push(data);
+
+
+        
+        io.sockets.emit('productos', productos);
+    });
+    
 });

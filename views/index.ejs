@@ -28,6 +28,29 @@
 
 <!-- <div id="productos"></div> -->
 
+
+
+ <table class="default" border="1px solid black" >
+
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Imagen</th>
+    </tr>
+  
+        <% for(let i=0; i < productos.length; i++) { %>
+            <tr>
+                <td> <%= productos[i].title %></td>
+                <td> <%= productos[i].price %></td>
+                <td> <img src= " <%= productos[i].thumbnail %> "</td>
+            </tr>
+        <% } %>
+
+  
+  </table>
+
+
+
 <br>
 <h1>Chat</h1>
 <form onsubmit="return addMessage(this)">
