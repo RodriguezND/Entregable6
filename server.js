@@ -77,27 +77,19 @@ io.on('connection', function(socket) {
 
     
 
-    /* socket.emit('productos', productos);
+    //socket.emit('productos', productos);
     
-    //Agregar Nuevo producto
-    socket.on('new-productos',data => {
-        productos.push(data);
-        io.sockets.emit('productos', productos);
-    }); */
    
     app.get("/prueba", (req, res) => {
 
-        
         res.render("index.ejs", {productos: productos})
     
     })
 
+    //Agregar Nuevo producto
     socket.on('new-productos',data => {
         productos.push(data);
-
-
-        
         io.sockets.emit('productos', productos);
     });
-    
+   
 });

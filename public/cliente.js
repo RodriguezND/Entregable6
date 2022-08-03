@@ -6,7 +6,7 @@ const socket = io.connect();
 });
  */
 
-/* function renderProductos(data) {
+function renderProductos(data) {
     const html = data.map((productos, index) => {
         return(
             `<div><table class="default" border="1px solid black" >
@@ -24,13 +24,13 @@ const socket = io.connect();
             </table></div>`)
     }).join(" ");
     document.getElementById('productos').innerHTML = html;
-} */
+} 
 
 
-
-/* socket.on('productos', function(data) { 
+socket.on('productos', function(data) { 
     renderProductos(data); 
-}); */
+});
+
 
 function addProducto(e) {
     const producto = {
